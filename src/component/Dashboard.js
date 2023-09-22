@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState,useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Card from './Card'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-function Dashboard({users,setUsers}) {
-let data =[{
+import { UsersContext } from '../context/UserContextComponent'
+function Dashboard() {
+  let userContext = useContext(UsersContext)
+  console.log('context',userContext)
+let [data,setData] = useState([{
     title:"Earnings (Monthly)",
     value:"$5000",
     color:"primary",
@@ -32,7 +35,7 @@ let data =[{
     icon:"fa-comments",
     isProgress:false
 }
-]
+])
 
 let navigate = useNavigate()
  return <>
@@ -42,7 +45,7 @@ let navigate = useNavigate()
                 <div className="container-fluid">
 
                     <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <h1 className="h3 mb-0 text-gray-800">Student And Teacher Management</h1>
                         <a href="javascript(void)" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 className="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
@@ -63,7 +66,7 @@ let navigate = useNavigate()
       <thead>
         <tr>
           <th>#</th>
-          <th>Name</th>
+          <th>Student Name</th>
           <th>Email</th>
           <th>Mobile</th>
           <th>DOB</th>
@@ -72,7 +75,7 @@ let navigate = useNavigate()
       </thead>
       <tbody>
         {
-            users.map((e,i)=>{
+            userContext.users.map((e,i)=>{
                 return <tr key={i}>
                     <td>{i+1}</td>
                     <td>{e.name}</td>
@@ -83,9 +86,9 @@ let navigate = useNavigate()
                       <Button variant='primary' onClick={()=>navigate(`/edit-user/${i}`)}>Edit</Button>
                       &nbsp;&nbsp;
                       <Button variant='danger' onClick={()=>{
-                        let newArray = [...users]
+                        let newArray = [...userContext.users]
                         newArray.splice(i,1)
-                        setUsers(newArray)
+                        userContext.setUsers(newArray)
                       }}>Delete</Button>
                     </td>
                 </tr>
