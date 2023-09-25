@@ -7,25 +7,29 @@ function UserContextComponent({children}) {
          name:"Anoop",
          email:"anoop@gmail.com",
          mobile:"1234567890",
-         dob:"1998-01-23"
+         dob:"1998-01-23",
+         tname:"Nagarajan"
       },
       {
         name:"Ajith",
         email:"ajith@gmail.com",
         mobile:"9790973973",
-        dob:"1998-01-28" 
+        dob:"1998-01-28",
+        tname:"Manikandan" 
       },
       {
         name:"Ganesh",
          email:"ganesh@gmail.com",
          mobile:"9797666333",
-         dob:"1999-03-25"
+         dob:"1999-03-25",
+         tname:"Sangeetha"
       },
       {
         name:"Gokul",
         email:"gokul@gmail.com",
         mobile:"9109105555",
-        dob:"1997-05-21"
+        dob:"1997-05-21",
+        tname:"Sathish"
       }
     ])
     

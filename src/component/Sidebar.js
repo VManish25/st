@@ -5,14 +5,14 @@ function Sidebar() {
     let navigate = useNavigate()
  return <>
 
- <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+ <ul className="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
 
 <div className="sidebar-brand d-flex align-items-center justify-content-center" >
-    <div className="sidebar-brand-icon rotate-n-15">
-        <i className="fas fa-laugh-wink"></i>
+    <div className="sidebar-brand-icon rotate-n-5">
+    <i class="fa-solid fa-computer"></i>
     </div>
-    <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    <div className="sidebar-brand-text mx-3">ABC Institute</div>
 </div>
 
 
@@ -62,15 +62,6 @@ function Sidebar() {
     </div>
 </li>
 </Link>
-
-
-<li className="nav-item" onClick={()=>navigate('/task')}>
-    <div className="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-        aria-expanded="true" aria-controls="collapseTwo">
-        <i className="fa-solid fa-list-check"></i>
-        <span>Task</span>
-    </div>
-</li>
 
 </ul>
 

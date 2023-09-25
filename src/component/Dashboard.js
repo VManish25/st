@@ -7,34 +7,10 @@ import { UsersContext } from '../context/UserContextComponent'
 function Dashboard() {
   let userContext = useContext(UsersContext)
   console.log('context',userContext)
-let [data,setData] = useState([{
-    title:"Earnings (Monthly)",
-    value:"$5000",
-    color:"primary",
-    icon:"fa-calendar",
-    isProgress:false
-},
-{
-    title:"Earnings (Annual)",
-    value:"$60000",
-    color:"success",
-    icon:"fa-dollar-sign",
-    isProgress:false
-},
-{
-    title:"Task",
-    value:"50",
-    color:"info",
-    icon:"fa-clipboard-list",
-    isProgress:true
-},
-{
-    title:"Pending Request",
-    value:"18",
-    color:"warning",
-    icon:"fa-comments",
-    isProgress:false
-}
+let [data,setData] = useState([
+
+
+
 ])
 
 let navigate = useNavigate()
@@ -70,6 +46,7 @@ let navigate = useNavigate()
           <th>Email</th>
           <th>Mobile</th>
           <th>DOB</th>
+          <th>Teacher Name</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -82,6 +59,7 @@ let navigate = useNavigate()
                     <td>{e.email}</td>
                     <td>{e.mobile}</td>
                     <td>{e.dob}</td>
+                    <td>{e.tname}</td>
                     <td>
                       <Button variant='primary' onClick={()=>navigate(`/edit-user/${i}`)}>Edit</Button>
                       &nbsp;&nbsp;

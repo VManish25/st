@@ -13,6 +13,7 @@ let [name,setName] = useState("")
 let [email,setEmail] = useState("")
 let [mobile,setMobile] = useState("")
 let [dob,setDob] = useState("")
+let [tname,setTname] = useState("")
 
 let handleSubmit = ()=>{
 let newUser = {name,email,mobile,dob}
@@ -36,6 +37,7 @@ useEffect(()=>{
     setEmail(userContext.users[params.id].email)
     setMobile(userContext.users[params.id].mobile)
     setDob(userContext.users[params.id].dob)
+    setTname(userContext.users[params.id].tname)
   }
   console.log("Use Effect is triggered")
 },[params.id,users])
@@ -58,6 +60,10 @@ useEffect(()=>{
        <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Date Of Birth</Form.Label>
         <Form.Control type="date" value={dob} onChange={(e)=>setDob(e.target.value)} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Teacher Name</Form.Label>
+        <Form.Control type="text" placeholder="Enter name" value={tname} onChange={(e)=>setTname(e.target.value)}/>
       </Form.Group>
       
       <Button variant="primary" onClick={()=>handleSubmit()}>

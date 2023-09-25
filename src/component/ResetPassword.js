@@ -2,7 +2,7 @@ import React from 'react'
 
 function ResetPassword() {
   return (
-    <div>ResetPassword</div>
+    <div><h1>ResetPassword</h1></div>
   )
 }
 
